@@ -17,7 +17,7 @@ namespace TesterClubPagoApi.Controllers
     [SecurityFilter]
     public class ConsultaReferenciaController : ControllerBase
     {
-        
+
         // GET: api/ConsultaReferencia
         [HttpGet]
         public ActionResult<string> Get(string r)
@@ -25,7 +25,7 @@ namespace TesterClubPagoApi.Controllers
             //Emulador
             if (r.EndsWith("3"))
             {
-                return JsonConvert.SerializeObject(new { codigo = 3, monto = 0, transaccion = 0, mensaje = "Referencia Desconocida", referencia = r});
+                return JsonConvert.SerializeObject(new { codigo = 3, monto = 0, transaccion = 0, mensaje = "Referencia Desconocida", referencia = r });
             }
 
             //Emulador
@@ -38,37 +38,7 @@ namespace TesterClubPagoApi.Controllers
             //...
             //...
             //Respuesta Exitosa
-            return JsonConvert.SerializeObject(new { codigo = 0, monto = new Random().Next(100000, 999999), transaccion = 65432583, mensaje = "Transaccion Exitosa", referencia = r});
-        }
-
-        private string GetToken()
-        {
-            return Convert.ToBase64String(Encoding.ASCII.GetBytes("563296814ASWRS"));
-        }
-
-        // GET: api/ConsultaReferencia/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/ConsultaReferencia
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/ConsultaReferencia/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return JsonConvert.SerializeObject(new { codigo = 0, monto = new Random().Next(100000, 999999), transaccion = 65432583, mensaje = "Transaccion Exitosa", referencia = r });
         }
     }
 }
