@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "8354b351-e262-4e18-86e7-35901630810f",
+		"name": "ClubPagoAPIClient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ConsultaReferencia",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Origin",
+						"value": "NTYzMjk2ODE0QVNXUlM=",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "CPAPI_AGNT_V1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44347/Service/ConsultaReferencia/?r=77774001234567890",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44347",
+					"path": [
+						"Service",
+						"ConsultaReferencia",
+						""
+					],
+					"query": [
+						{
+							"key": "r",
+							"value": "77774001234567890"
+						}
+					]
+				},
+				"description": "Ejemplo para generar una consulta de referencia"
+			},
+			"response": []
+		},
+		{
+			"name": "PagoReferencia",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Origin",
+						"value": "NTYzMjk2ODE0QVNXUlM=",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "CPAPI_AGNT_V1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"transaccion\": \"123456\",\r\n\"fecha\": \"2020-03-24T15:02:00\",\r\n\"monto\": 150000,\r\n\"referencia\":\"77774001234567890\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44347/Service/PagoReferencia/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44347",
+					"path": [
+						"Service",
+						"PagoReferencia",
+						""
+					]
+				},
+				"description": "Ejemplo para consumir PagoReferencia"
+			},
+			"response": []
+		},
+		{
+			"name": "CancelaPago",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-Origin",
+						"value": "NTYzMjk2ODE0QVNXUlM=",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "CPAPI_AGNT_V1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"transaccion\": \"123456\",\r\n\"fecha\": \"2020-03-24T15:02:00\",\r\n\"monto\": 150000,\r\n\"referencia\":\"77774001234567890\"\r\n\"autorizacion\":\"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44347/Service/CancelaPago/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44347",
+					"path": [
+						"Service",
+						"CancelaPago",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
